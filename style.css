@@ -1,0 +1,2476 @@
+@font-face {
+  font-family: "Madina";
+  src: url("assets/fonts/Madina.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Operetta";
+  src: url("assets/fonts/Operetta18-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Garamond Custom";
+  src: url("assets/fonts/GARA.TTF") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Custom";
+  src: url("assets/fonts/Helvetica_3.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Baskerville Custom";
+  src: url("assets/fonts/Baskerville_2.ttc") format("collection");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Baskerville Custom";
+  src: url("assets/fonts/Baskerville_2.ttc") format("collection");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Baskerville Custom";
+  src: url("assets/fonts/Baskerville_2.ttc") format("collection");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+:root {
+  --orange: #d77434;
+  --orange-deep: #bd5e2d;
+  --cream: #f8f7ea;
+  --gold: #bfa66a;
+  --brown: #432416;
+  --light: #f6e09e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--orange);
+  color: var(--brown);
+  font-family: "Baskerville Custom", Baskerville, Georgia, serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+#mainContent {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  aspect-ratio: 1440 / 8796.24;
+  margin: 0 auto;
+  overflow: hidden;
+  background: var(--orange) url("assets/images/design-underlay.svg") top center / 100% 100% no-repeat;
+}
+
+.design-section {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  margin: 0;
+}
+
+.reference-art {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  display: none;
+  overflow: hidden;
+}
+
+.reference-art img {
+  position: absolute;
+  display: block;
+  max-width: none;
+  user-select: none;
+}
+
+.top-nav {
+  position: absolute;
+  z-index: 20;
+  top: min(13px, 0.903vw);
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: min(25px, 1.736vw);
+  white-space: nowrap;
+}
+
+.top-nav a {
+  color: #53504b;
+  font: min(21px, 1.458vw) / 1 "Helvetica Custom", Arial, sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.top-nav a:hover,
+.top-nav a:focus-visible {
+  color: #432416;
+  transform: translateY(-2px);
+}
+
+.mobile-menu-toggle,
+.mobile-menu-backdrop {
+  display: none;
+}
+
+.hero {
+  top: 0;
+  height: 10.356%;
+  color: var(--light);
+  text-align: center;
+}
+
+.hero-content {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+}
+
+.monogram {
+  position: absolute;
+  top: 24.74%;
+  left: 50%;
+  width: min(202px, 14.028vw);
+  height: min(299px, 20.764vw);
+  object-fit: contain;
+  transform: translateX(-50%);
+}
+
+.hero .eyebrow {
+  position: absolute;
+  top: 60.38%;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  color: #432416;
+  font: min(28px, 1.944vw) / 1 "Baskerville Custom", serif;
+  letter-spacing: 0.31em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  position: absolute;
+  top: 63.85%;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  color: #f7e19f;
+  font: min(120px, 8.333vw) / 1.15 "Madina", cursive;
+  font-weight: 400;
+}
+
+.hero-date {
+  position: absolute;
+  top: 79.12%;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  color: #432416;
+  font: min(28px, 1.944vw) / 1 "Baskerville Custom", serif;
+  letter-spacing: 0.38em;
+}
+
+.quote {
+  top: 10.356%;
+  height: 4.411%;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.quote-content {
+  position: relative;
+  z-index: 4;
+  width: min(610px, 42.361vw);
+  margin-top: 0;
+  color: #432416;
+  font: italic min(28px, 1.944vw) / 1.2 "Baskerville Custom", serif;
+}
+
+.quote-content p {
+  margin: 0;
+}
+
+.quote-content strong {
+  display: block;
+  font-weight: 400;
+}
+
+.couple {
+  top: 14.767%;
+  height: 18.713%;
+  color: #f7e19f;
+  text-align: center;
+}
+
+.couple-content {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  font-size: min(28px, 1.944vw);
+  line-height: 1.2;
+}
+
+.islamic-intro {
+  position: absolute;
+  top: 15.5%;
+  left: 20%;
+  width: 60%;
+}
+
+.arabic {
+  margin: 0 0 min(28px, 1.944vw);
+  font: min(48px, 3.333vw) / 1.3 Georgia, serif;
+}
+
+.salam {
+  font-style: italic;
+}
+
+.islamic-intro .salam,
+.islamic-intro > p:last-child {
+  color: #432416;
+}
+
+.couple-grid {
+  position: absolute;
+  top: 36%;
+  left: 11%;
+  width: 78%;
+  display: grid;
+  grid-template-columns: 1fr min(110px, 7.639vw) 1fr;
+  align-items: start;
+}
+
+.portrait {
+  width: min(220px, 15.278vw);
+  height: min(220px, 15.278vw);
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.person img {
+  display: block;
+  width: min(220px, 15.278vw);
+  height: min(220px, 15.278vw);
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 20%;
+}
+
+.person h2 {
+  margin: min(145px, 10.069vw) 0 min(18px, 1.25vw);
+  color: #f7e19f;
+  font: min(84.8px, 5.889vw) / 0.9 "Madina", cursive;
+  font-weight: 400;
+}
+
+.person h2 span {
+  display: inline-block;
+  margin-left: 0.16em;
+  font: min(36px, 2.5vw) / 1 "Baskerville Custom", serif;
+}
+
+.person p {
+  margin: 0;
+  color: #432416;
+}
+
+.ampersand {
+  padding-top: min(161px, 11.181vw);
+  font: min(100px, 6.944vw) / 1 "Madina", cursive;
+}
+
+.couple-closing {
+  position: absolute;
+  top: 79.52%;
+  bottom: auto;
+  left: 20%;
+  width: 60%;
+}
+
+.couple-closing p {
+  margin: 0 0 min(31px, 2.153vw);
+  color: #432416;
+}
+
+.countdown-section {
+  top: 33.48%;
+  height: 4.456%;
+  z-index: 4;
+  text-align: center;
+}
+
+.countdown-section h2 {
+  margin: 6.5% 0 2.2%;
+  color: #432416;
+  font: min(48px, 3.333vw) / 1 "Baskerville Custom", serif;
+  font-weight: 400;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: min(32px, 2.222vw);
+}
+
+.countdown div {
+  width: min(142px, 9.861vw);
+  height: min(142px, 9.861vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: min(18px, 1.25vw);
+  background: #e7772f;
+  color: #f8f7ea;
+  box-shadow: 0 min(10px, 0.694vw) min(18px, 1.25vw) rgba(125, 67, 25, 0.13);
+}
+
+.countdown b {
+  font: min(46px, 3.194vw) / 1 "Garamond Custom", serif;
+  font-weight: 400;
+}
+
+.countdown span {
+  margin-top: min(10px, 0.694vw);
+  font-size: min(25px, 1.736vw);
+}
+
+.location {
+  top: 37.936%;
+  height: 15.279%;
+  color: #f7e19f;
+  text-align: center;
+}
+
+.location-content {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+}
+
+.location h2,
+.wishes h2,
+.rsvp-card h2,
+.thank-you h2 {
+  margin: 0;
+  font: min(84.8px, 5.889vw) / 1 "Madina", cursive;
+  font-weight: 400;
+}
+
+.location h2 {
+  position: absolute;
+  top: 6.8%;
+  left: 0;
+  width: 100%;
+}
+
+.hotel-image {
+  position: absolute;
+  top: 19.95%;
+  left: 50%;
+  width: min(715px, 49.653vw);
+  height: min(546px, 37.917vw);
+  object-fit: contain;
+  transform: translateX(-50%);
+}
+
+.location-content > h3 {
+  position: absolute;
+  top: 63.23%;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  font: min(36px, 2.5vw) / 1.2 "Baskerville Custom", serif;
+  font-weight: 600;
+}
+
+.location-content > p {
+  position: absolute;
+  top: 70.72%;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  font-size: min(28px, 1.944vw);
+  color: #432416;
+}
+
+.location-button {
+  position: absolute;
+  top: 75.75%;
+  left: 50%;
+  width: min(450px, 31.25vw);
+  height: min(64px, 4.444vw);
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: #d0b45e;
+  color: #432416;
+  font-size: min(28px, 1.944vw);
+  line-height: 1;
+  cursor: pointer;
+  transform: translateX(-50%);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.location-icon,
+.send-icon {
+  display: block;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.location-icon {
+  width: min(30px, 2.083vw);
+  height: min(30px, 2.083vw);
+}
+
+.send-icon {
+  width: min(19px, 1.319vw);
+  height: min(19px, 1.319vw);
+}
+
+.upload-icon {
+  width: min(43px, 2.986vw);
+  height: min(43px, 2.986vw);
+  display: block;
+  flex: 0 0 auto;
+  margin-right: 0.65em;
+  object-fit: contain;
+}
+
+.location-button:hover,
+.location-button:focus-visible {
+  background: #b99a43;
+  transform: translateX(-50%) translateY(-3px);
+}
+
+.schedule {
+  position: absolute;
+  top: 85.12%;
+  left: 21.67%;
+  width: 51.8%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9%;
+}
+
+.schedule h3 {
+  margin: 0 0 min(22px, 1.528vw);
+  font: min(36px, 2.5vw) / 1 "Baskerville Custom", serif;
+  font-weight: 600;
+}
+
+.schedule p {
+  margin: 0;
+  font-size: min(28px, 1.944vw);
+  color: #432416;
+}
+
+.gallery-rsvp {
+  top: 53.215%;
+  height: 20.919%;
+  z-index: 1;
+  background: transparent;
+}
+
+.gallery-swiper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 43.15%;
+}
+
+.gallery-swiper .swiper-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery-swiper .swiper-slide {
+  width: auto !important;
+  height: 100%;
+  overflow: hidden;
+}
+
+.gallery-swiper img,
+.large-gallery-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .location-icon,
+  .send-icon,
+  .upload-icon {
+    display: none;
+  }
+
+  .hero .eyebrow {
+    top: 60.93%;
+    transform: scaleX(0.89);
+  }
+
+  .hero h1 {
+    top: 65.5%;
+  }
+
+  .hero-date {
+    top: 79.67%;
+    transform: scaleX(0.79);
+  }
+
+  .quote {
+    display: block;
+  }
+
+  .quote-content {
+    position: absolute;
+    top: 13.9%;
+    left: 28.819%;
+    width: 42.361%;
+  }
+
+  .quote-content p,
+  .quote-content strong {
+    transform: translateY(min(3px, 0.208vw)) scaleX(0.978);
+    transform-origin: center;
+  }
+
+  .islamic-intro {
+    inset: 0;
+    width: 100%;
+  }
+
+  .islamic-intro .salam {
+    position: absolute;
+    top: 24.66%;
+    left: 20%;
+    width: 60%;
+    margin: 0;
+    transform: scaleX(0.896);
+    transform-origin: center;
+  }
+
+  .islamic-intro > p:last-child {
+    position: absolute;
+    top: 28.75%;
+    left: 20%;
+    width: 60%;
+    margin: 0;
+    transform: scaleX(1.025);
+    transform-origin: center;
+  }
+
+  .bride h2,
+  .bride p {
+    position: relative;
+    left: min(20px, 1.389vw);
+  }
+
+  .bride h2 {
+    transform: scaleX(0.986);
+    transform-origin: center;
+  }
+
+  .groom h2,
+  .groom p {
+    position: relative;
+    right: min(35px, 2.431vw);
+  }
+
+  .groom h2 {
+    transform: translateY(min(4px, 0.278vw));
+  }
+
+  .bride p,
+  .groom p {
+    transform: scaleX(1.022);
+    transform-origin: center;
+  }
+
+  .couple-closing p {
+    transform: scaleX(1.021);
+    transform-origin: center;
+  }
+
+  .couple .arabic,
+  .connected-logo {
+    visibility: hidden;
+  }
+
+  .monogram,
+  .person img,
+  .hotel-image,
+  .gallery-swiper img,
+  .large-gallery-photo img {
+    opacity: 0;
+  }
+
+  .rsvp-card .pill-options span,
+  .rsvp-card .guest-counts select,
+  .rsvp-card .round-submit {
+    background: transparent;
+  }
+
+  .countdown div {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .rsvp-card .attendance-options,
+  .rsvp-card .event-options {
+    display: grid;
+    justify-content: center;
+    gap: min(18px, 1.25vw);
+    transform: translateX(min(3px, 0.208vw));
+  }
+
+  .rsvp-card .attendance-options {
+    grid-template-columns: repeat(2, min(164px, 11.389vw));
+  }
+
+  .rsvp-card .event-options {
+    grid-template-columns: repeat(3, min(164px, 11.389vw));
+  }
+
+  .rsvp-card .pill-options label,
+  .rsvp-card .pill-options span {
+    width: min(164px, 11.389vw);
+    min-width: min(164px, 11.389vw);
+  }
+
+  .countdown-section h2 {
+    position: absolute;
+    top: 11.39%;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    transform: scaleX(0.953);
+    transform-origin: center;
+  }
+
+  .countdown-section .countdown {
+    position: absolute;
+    top: 30.8%;
+    left: 0;
+    width: 100%;
+  }
+
+  .location-button,
+  .location-button:hover,
+  .location-button:focus-visible {
+    background: transparent;
+    transform: translateX(-50%);
+  }
+
+  .location-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-indent: min(42px, 2.917vw);
+  }
+
+  .location-content > h3 {
+    transform: scaleX(1.18);
+  }
+
+  .location-content > p {
+    transform: translateX(min(2px, 0.139vw)) scaleX(1.024);
+  }
+
+  .schedule > div:first-child h3 {
+    transform: scaleX(1.151);
+  }
+
+  .schedule > div:last-child h3 {
+    transform: scaleX(1.193);
+  }
+
+  .schedule p {
+    transform: scaleX(1.025);
+  }
+
+  .location-content > h3,
+  .location-content > p,
+  .schedule h3,
+  .schedule p {
+    transform-origin: center;
+  }
+
+  .guest-name input {
+    border-bottom-color: transparent;
+  }
+
+  .wishes input,
+  .wishes textarea,
+  .wishes .file-field,
+  .wishes .send-wish,
+  .wishes .all-messages {
+    border-color: transparent;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .rsvp-card .pill-options input:checked + span {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .rsvp-card {
+    padding: 0;
+  }
+
+  .rsvp-card h2,
+  .rsvp-card .guest-name,
+  .rsvp-card > p,
+  .rsvp-card .pill-options,
+  .rsvp-card .guest-counts,
+  .rsvp-card .round-submit {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    margin: 0;
+  }
+
+  .rsvp-card h2 { top: 4.92%; }
+  .rsvp-card .guest-name { top: 21.1%; }
+  .rsvp-card > p:nth-of-type(1) { top: 28.4%; }
+  .rsvp-card .attendance-options { top: 33.2%; }
+  .rsvp-card > p:nth-of-type(2) { top: 43.8%; }
+  .rsvp-card .event-options { top: 50.5%; }
+  .rsvp-card > p:nth-of-type(3) { top: 59.8%; }
+  .rsvp-card .guest-counts { top: 64.7%; }
+  .rsvp-card > p:nth-of-type(4) { top: 79.2%; }
+  .rsvp-card .round-submit {
+    top: 86.3%;
+    left: 50%;
+    width: min(84px, 5.833vw);
+    transform: translateX(-50%);
+  }
+  .rsvp-card .status { top: 94%; }
+
+  .rsvp-card .guest-counts select {
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  .wishes .file-field span {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    padding-left: min(82px, 5.694vw);
+    font-family: "Baskerville Custom", serif;
+    transform: translateY(-2px);
+  }
+
+  .wishes .send-wish,
+  .wishes .all-messages {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+
+  .wishes .all-messages {
+    padding-top: 0;
+    transform: translateY(-3px);
+  }
+
+  .wishes h2 {
+    transform: translateY(min(37px, 2.569vw));
+  }
+
+  .thank-you h2 {
+    transform: translateY(min(11px, 0.764vw));
+  }
+
+  .thank-you p {
+    transform: translateY(max(-53px, -3.681vw)) scaleX(1.024);
+    transform-origin: center;
+  }
+}
+
+.gallery-swiper .swiper-slide:nth-child(1) img {
+  object-position: 52% center;
+}
+
+.gallery-swiper .swiper-slide:nth-child(2) img {
+  object-position: 50% 47%;
+}
+
+.gallery-swiper .swiper-slide:nth-child(3) img {
+  object-position: 51% 55%;
+}
+
+.swiper-pagination {
+  display: none;
+}
+
+.large-gallery-photo {
+  position: absolute;
+  top: 43.15%;
+  left: 0;
+  width: 50%;
+  height: 56.85%;
+  overflow: hidden;
+}
+
+.large-gallery-photo img {
+  object-position: center 71%;
+}
+
+.rsvp-card {
+  position: absolute;
+  z-index: 4;
+  top: 43.15%;
+  right: 0;
+  width: 50%;
+  height: 56.85%;
+  margin: 0;
+  padding: 4.8% 5.5% 2%;
+  color: #432416;
+  text-align: center;
+}
+
+.rsvp-card h2 {
+  margin-bottom: 7%;
+}
+
+.rsvp-card p,
+.rsvp-card label {
+  font-size: min(28px, 1.944vw);
+  line-height: 1.2;
+}
+
+.guest-name {
+  display: block;
+  margin-bottom: 3.5%;
+  text-transform: uppercase;
+}
+
+.guest-name input {
+  display: block;
+  width: 65%;
+  margin: 1.2% auto 0;
+  border: 0;
+  border-bottom: 1px solid rgba(114, 69, 32, 0.48);
+  outline: 0;
+  background: transparent;
+  color: inherit;
+  text-align: center;
+}
+
+.guest-name input::placeholder {
+  color: #432416;
+  opacity: 1;
+}
+
+.pill-options {
+  display: flex;
+  justify-content: center;
+  gap: min(16px, 1.111vw);
+  margin: 2% 0 3%;
+}
+
+.pill-options label {
+  margin: 0;
+  cursor: pointer;
+}
+
+.pill-options input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.pill-options span {
+  min-width: min(126px, 8.75vw);
+  min-height: min(68px, 4.722vw);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: min(8px, 0.556vw) min(18px, 1.25vw);
+  border-radius: 999px;
+  background: #d5bb68;
+  color: #432416;
+  line-height: 1;
+}
+
+.event-options span {
+  min-width: min(116px, 8.056vw);
+}
+
+.pill-options input:checked + span {
+  background: #b98437;
+  color: #f8f7ea;
+  box-shadow: 0 0 0 3px rgba(185, 132, 55, 0.22);
+}
+
+.guest-counts {
+  display: flex;
+  justify-content: center;
+  gap: 8%;
+  margin: 1% 0 2%;
+}
+
+.guest-counts label {
+  min-width: 18%;
+}
+
+.guest-counts select {
+  display: block;
+  min-width: min(70px, 4.861vw);
+  margin: 8% auto 0;
+  border: 0;
+  background: rgba(255, 255, 255, 0.45);
+  color: inherit;
+  text-align: center;
+}
+
+.round-submit {
+  width: min(84px, 5.833vw);
+  height: min(56px, 3.889vw);
+  border: 0;
+  border-radius: 999px;
+  background: #d5bb68;
+  color: #f8f7ea;
+  cursor: pointer;
+}
+
+.status {
+  min-height: 1.2em;
+  margin-top: 2%;
+}
+
+.wishes {
+  top: 74.134%;
+  height: 17.61%;
+  color: #f7e19f;
+  text-align: center;
+}
+
+.wishes-content {
+  position: relative;
+  z-index: 4;
+  width: min(690px, 47.917vw);
+  margin: 0 auto;
+  padding-top: 18.4%;
+}
+
+.wishes h2 {
+  margin-bottom: min(115px, 7.986vw);
+}
+
+.wishes form {
+  display: grid;
+  gap: min(8px, 0.556vw);
+}
+
+.wishes input,
+.wishes textarea {
+  width: 100%;
+  border: 0;
+  background: #fff;
+  color: #674328;
+  font-size: min(25px, 1.736vw);
+  outline-color: #d1b761;
+}
+
+.wishes input {
+  height: min(54px, 3.75vw);
+  padding: 0 min(20px, 1.389vw);
+}
+
+.wishes textarea {
+  height: min(165px, 11.458vw);
+  padding: min(14px, 0.972vw) min(20px, 1.389vw);
+  resize: vertical;
+}
+
+.wishes input::placeholder,
+.wishes textarea::placeholder {
+  color: #acabab;
+  opacity: 1;
+}
+
+.upload-label {
+  margin: min(28px, 1.944vw) 0 min(18px, 1.25vw);
+  font-size: min(28px, 1.944vw);
+  color: #432416;
+}
+
+.file-field {
+  position: relative;
+  height: min(58px, 4.028vw);
+  display: flex;
+  align-items: center;
+  background: #fff;
+  color: #a5a4a4;
+  text-align: left;
+  cursor: pointer;
+}
+
+.file-field input {
+  position: absolute;
+  opacity: 0;
+}
+
+.file-field span {
+  padding-left: min(18px, 1.25vw);
+  font: min(24px, 1.667vw) / 1 "Operetta", serif;
+}
+
+.send-wish,
+.all-messages {
+  height: min(58px, 4.028vw);
+  border: 0;
+  border-radius: 999px;
+  background: #d2b65f;
+  color: #ffffff;
+  font-size: min(26px, 1.806vw);
+  cursor: pointer;
+}
+
+.send-wish {
+  margin-top: min(32px, 2.222vw);
+}
+
+.wish-list {
+  margin-top: min(55px, 3.819vw);
+  color: #432416;
+  text-align: left;
+  font-size: min(28px, 1.944vw);
+}
+
+.all-messages {
+  width: 100%;
+  margin-top: min(28px, 1.944vw);
+  background: #f7dea1;
+  color: #432416;
+}
+
+.thank-you {
+  top: 91.744%;
+  height: 8.256%;
+  display: grid;
+  place-items: center;
+  color: #432416;
+  text-align: center;
+}
+
+.thank-you > div {
+  position: relative;
+  z-index: 4;
+  margin-top: 3%;
+}
+
+.thank-you p {
+  margin: min(70px, 4.861vw) 0 0;
+  font-size: min(28px, 1.944vw);
+  line-height: 1.2;
+}
+
+.connected-logo {
+  display: block;
+  width: min(105px, 7.292vw);
+  height: auto;
+  margin: min(105px, 7.292vw) auto 0;
+}
+
+.footer-flourish,
+.footer-sprig,
+.mobile-ornament {
+  display: none;
+}
+
+.music-toggle {
+  position: fixed;
+  z-index: 1050;
+  right: 18px;
+  bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  border-radius: 999px;
+  opacity: 0;
+  visibility: hidden;
+  background: rgba(94, 57, 31, 0.88);
+  color: #fff;
+  cursor: pointer;
+  transform: translateY(15px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  backdrop-filter: blur(8px);
+}
+
+.music-toggle.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.music-toggle.is-playing .music-icon {
+  animation: musicPulse 0.9s ease-in-out infinite alternate;
+}
+
+@keyframes musicPulse {
+  to { transform: scale(1.3) rotate(8deg); }
+}
+
+.modal-content {
+  overflow: hidden;
+  border: 0;
+  border-radius: 18px;
+}
+
+.modal-body {
+  height: 65vh;
+  min-height: 400px;
+  padding: 0;
+}
+
+.modal iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 767.98px) {
+  body {
+    background: var(--cream);
+  }
+
+  #mainContent {
+    max-width: none;
+    aspect-ratio: auto;
+    background: none;
+  }
+
+  .reference-art {
+    display: none;
+  }
+
+  body.mobile-menu-open {
+    overflow: hidden;
+  }
+
+  .mobile-menu-toggle {
+    position: fixed;
+    z-index: 1080;
+    top: 14px;
+    right: 14px;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 0;
+    border: 1px solid rgba(247, 225, 159, 0.65);
+    border-radius: 50%;
+    background: rgba(67, 36, 22, 0.9);
+    box-shadow: 0 8px 22px rgba(67, 36, 22, 0.2);
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+  }
+
+  .mobile-menu-toggle span {
+    width: 20px;
+    height: 1.5px;
+    display: block;
+    border-radius: 999px;
+    background: #f7e19f;
+    transform-origin: center;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+  }
+
+  .mobile-menu-toggle.is-open span:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+  }
+
+  .mobile-menu-toggle.is-open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-menu-toggle.is-open span:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+  }
+
+  .mobile-menu-backdrop {
+    position: fixed;
+    z-index: 1060;
+    inset: 0;
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    background: rgba(35, 22, 15, 0.46);
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+  }
+
+  .mobile-menu-backdrop.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .top-nav {
+    position: fixed;
+    z-index: 1070;
+    inset: 0 0 0 auto;
+    width: min(82vw, 310px);
+    height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0;
+    padding: 88px 34px 42px;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    background-color: var(--orange);
+    background-image: url("assets/images/reference/batik-orange-tile.svg?v=3");
+    background-size: 36px 36px;
+    box-shadow: -18px 0 40px rgba(67, 36, 22, 0.24);
+    transform: translateX(105%);
+    transition: transform 0.28s ease, opacity 0.2s ease, visibility 0.28s ease;
+  }
+
+  .top-nav::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    width: 340px;
+    height: 206px;
+    opacity: 0.38;
+    background: url("assets/images/reference/asset-203-815x494.png") center / contain no-repeat;
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+
+  .top-nav.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .top-nav a {
+    position: relative;
+    z-index: 1;
+    padding: 14px 2px;
+    border-bottom: 1px solid rgba(247, 225, 159, 0.3);
+    color: #f7e19f;
+    font-size: 14px;
+    letter-spacing: 0.09em;
+    text-align: left;
+  }
+
+  .top-nav a:last-child {
+    border-bottom: 0;
+  }
+
+  .top-nav a:hover,
+  .top-nav a:focus-visible {
+    color: #ffffff;
+    transform: translateX(4px);
+  }
+
+  .design-section {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+  }
+
+  .hero,
+  .couple,
+  .location,
+  .wishes {
+    overflow: hidden;
+    background-color: var(--orange);
+    background-image: url("assets/images/reference/batik-orange-tile.svg?v=3");
+    background-size: 36px 36px;
+  }
+
+  .hero::before,
+  .couple::before,
+  .location::before,
+  .wishes::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: -22px;
+    left: 50%;
+    width: 520px;
+    max-width: 135%;
+    aspect-ratio: 815 / 494;
+    background: url("assets/images/reference/asset-203-815x494.png") center / contain no-repeat;
+    opacity: 0.58;
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+
+  .hero::before {
+    top: -18px;
+    width: 520px;
+    max-width: 138%;
+    aspect-ratio: 815 / 632;
+    opacity: 0.92;
+    background-image: url("assets/images/reference/mobile-hero-crown.png");
+  }
+
+  .mobile-ornament {
+    position: absolute;
+    z-index: 1;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    pointer-events: none;
+  }
+
+  .mobile-side-border {
+    top: 0;
+    bottom: 0;
+    width: 14px;
+    opacity: 0.5;
+    background-image: url("assets/images/reference/mobile-side-border.png");
+    background-position: center top;
+    background-size: 14px auto;
+    background-repeat: repeat-y;
+  }
+
+  .mobile-side-border.side-left {
+    left: 0;
+  }
+
+  .mobile-side-border.side-right {
+    right: 0;
+    transform: scaleX(-1);
+  }
+
+  .mobile-corner-spray {
+    bottom: -26px;
+    width: 184px;
+    height: 218px;
+    opacity: 0.82;
+    background-image: url("assets/images/reference/mobile-corner-spray.png");
+  }
+
+  .mobile-corner-spray.ornament-left {
+    left: -58px;
+  }
+
+  .mobile-corner-spray.ornament-right {
+    right: -58px;
+    transform: scaleX(-1);
+  }
+
+  .hero {
+    min-height: 100svh;
+    display: grid;
+    place-items: center;
+    padding: 64px 22px;
+  }
+
+  .hero-content {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .monogram {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 120px;
+    height: 178px;
+    margin-bottom: 22px;
+    transform: none;
+  }
+
+  .hero .eyebrow,
+  .hero h1,
+  .hero-date {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: auto;
+  }
+
+  .hero .eyebrow {
+    font-size: 13px;
+    letter-spacing: 0.25em;
+  }
+
+  .hero h1 {
+    margin: 16px 0 21px;
+    font-size: clamp(44px, 12.5vw, 60px);
+  }
+
+  .hero-date {
+    font-size: 14px;
+  }
+
+  .quote {
+    min-height: 420px;
+    padding: 90px 28px;
+    background-color: var(--cream);
+    background-image: url("assets/images/reference/batik-cream-tile.svg?v=3");
+    background-size: 36px 36px;
+  }
+
+  .countdown-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 34px;
+    background: url("assets/images/reference/asset-205-1152x97.png") center / auto 34px repeat-x;
+  }
+
+  .quote::before,
+  .quote::after,
+  .thank-you::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    pointer-events: none;
+  }
+
+  .quote::before {
+    top: 0;
+    height: 11.806vw;
+    background-image: url("assets/images/reference/transition-hero-quote-ai.png");
+  }
+
+  .quote::after {
+    bottom: 0;
+    height: 12.5vw;
+    background-image: url("assets/images/reference/transition-quote-couple-ai.png");
+  }
+
+  .thank-you::before {
+    top: 0;
+    height: 13.194vw;
+    background-image: url("assets/images/reference/transition-wishes-thanks-ai.png");
+  }
+
+  .quote-content {
+    width: 100%;
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.55;
+  }
+
+  .couple {
+    padding: 115px 23px 90px;
+  }
+
+  .mobile-couple-floral {
+    bottom: -90px;
+    width: 178px;
+    height: 305px;
+    opacity: 0.52;
+    background-image: url("assets/images/reference/mobile-couple-floral.png");
+  }
+
+  .mobile-couple-floral.ornament-left {
+    left: -66px;
+    transform: scaleX(-1);
+  }
+
+  .mobile-couple-floral.ornament-right {
+    right: -66px;
+  }
+
+  .couple-content,
+  .islamic-intro,
+  .couple-grid,
+  .couple-closing {
+    position: relative;
+    inset: auto;
+    width: 100%;
+  }
+
+  .couple-content {
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .islamic-intro {
+    margin-bottom: 58px;
+  }
+
+  .arabic {
+    font-size: 32px;
+  }
+
+  .couple-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .portrait {
+    width: 170px;
+    height: 170px;
+  }
+
+  .person img {
+    width: 100%;
+    height: 100%;
+    transform: scale(2.45);
+  }
+
+  .bride .person img,
+  .bride img {
+    transform-origin: 50% 27%;
+    transform: scale(2.45) translateY(8%);
+  }
+
+  .groom .person img,
+  .groom img {
+    transform-origin: 50% 28%;
+    transform: scale(2.45) translateY(8%);
+  }
+
+  .person h2 {
+    margin: 24px 0 16px;
+    font-size: 57px;
+    line-height: 0.92;
+  }
+
+  .person h2 span {
+    display: block;
+    margin: 13px 0 0;
+    font-size: 21px;
+  }
+
+  .ampersand {
+    padding: 0;
+    font-size: 70px;
+  }
+
+  .couple-closing {
+    margin-top: 64px;
+  }
+
+  .couple-closing p {
+    margin-bottom: 27px;
+  }
+
+  .countdown-section {
+    min-height: 330px;
+    padding: max(80px, calc(13.194vw + 18px)) 14px max(65px, calc(13.194vw + 18px));
+    background-color: var(--cream);
+    background-image:
+      url("assets/images/reference/footer-bottom-transparent.png"),
+      url("assets/images/reference/footer-bottom-transparent.png");
+    background-position: center -55px, center calc(100% + 55px);
+    background-repeat: no-repeat;
+    background-size: auto 165px;
+  }
+
+  .countdown-section::before,
+  .countdown-section::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    width: 100%;
+    height: 13.194vw;
+    opacity: 1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    pointer-events: none;
+  }
+
+  .countdown-section::before {
+    top: 0;
+    background-image: url("assets/images/reference/countdown-transition-top-ai.png");
+  }
+
+  .countdown-section::after {
+    bottom: 0;
+    background-image: url("assets/images/reference/countdown-transition-bottom-ai.png");
+  }
+
+  .countdown-section h2 {
+    margin: 0 0 36px;
+    font-size: 18px;
+    line-height: 1.45;
+    letter-spacing: 0.16em;
+  }
+
+  .countdown {
+    gap: 7px;
+  }
+
+  .countdown div {
+    width: calc((100vw - 49px) / 4);
+    max-width: 88px;
+    height: 88px;
+    border-radius: 10px;
+  }
+
+  .countdown b {
+    font-size: 29px;
+  }
+
+  .countdown span {
+    margin-top: 5px;
+    font-size: 12px;
+  }
+
+  .location {
+    padding: 70px 20px 58px;
+  }
+
+  .mobile-corner-branch {
+    bottom: -38px;
+    width: 194px;
+    height: 194px;
+    opacity: 0.84;
+    background-image: url("assets/images/reference/mobile-corner-branch.png");
+  }
+
+  .mobile-corner-branch.ornament-left {
+    left: -28px;
+  }
+
+  .mobile-corner-branch.ornament-right {
+    right: -28px;
+    transform: scaleX(-1);
+  }
+
+  .location-content {
+    position: relative;
+    z-index: 3;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .location h2,
+  .location-content > h3,
+  .location-content > p,
+  .location-button,
+  .schedule,
+  .hotel-image {
+    position: relative;
+    inset: auto;
+    width: auto;
+    transform: none;
+  }
+
+  .location h2 {
+    margin: 0 0 22px;
+    font-size: clamp(54px, 16vw, 66px);
+    line-height: 1;
+  }
+
+  .location h2::after,
+  .rsvp-card h2::after,
+  .wishes h2::after {
+    content: "";
+    width: min(210px, 56vw);
+    height: 25px;
+    display: block;
+    margin: 9px auto 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .location h2::after {
+    background-image: url("assets/images/reference/title-divider-location-ai.svg");
+  }
+
+  .rsvp-card h2::after {
+    width: min(180px, 48vw);
+    margin-top: 7px;
+    background-image: url("assets/images/reference/title-divider-rsvp-ai.svg");
+  }
+
+  .wishes h2::after {
+    width: min(200px, 54vw);
+    margin-top: 11px;
+    background-image: url("assets/images/reference/title-divider-wishes-ai.svg");
+  }
+
+  .hotel-image {
+    display: block;
+    width: min(76vw, 320px);
+    height: auto;
+    margin: 0 auto 20px;
+    object-fit: contain;
+  }
+
+  .location-content > h3 {
+    width: 100%;
+    margin: 0;
+    font-size: clamp(21px, 6.3vw, 24px);
+    line-height: 1.18;
+  }
+
+  .location-content > p {
+    width: min(100%, 330px);
+    margin: 15px auto 24px;
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  .location-button {
+    left: auto;
+    width: min(100%, 220px);
+    min-width: 0;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 0 22px;
+    border-radius: 999px;
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  .location-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .upload-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+  }
+
+  .send-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .location-button:hover,
+  .location-button:focus-visible {
+    transform: translateY(-3px);
+  }
+
+  .schedule {
+    width: min(100%, 340px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 14px;
+    margin: 36px auto 0;
+  }
+
+  .schedule > div {
+    min-width: 0;
+  }
+
+  .schedule h3 {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-size: clamp(19px, 5.7vw, 22px);
+    line-height: 1.12;
+  }
+
+  .schedule p {
+    margin: 8px 0 0;
+    font-size: 14px;
+    line-height: 1.25;
+  }
+
+  .gallery-rsvp {
+    background: var(--cream);
+  }
+
+  .gallery-swiper {
+    position: relative;
+    height: 520px;
+  }
+
+  .gallery-swiper .swiper-wrapper {
+    display: flex;
+  }
+
+  .gallery-swiper .swiper-slide {
+    width: 100% !important;
+  }
+
+  .swiper-pagination {
+    display: block;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: var(--orange);
+  }
+
+  .large-gallery-photo,
+  .rsvp-card {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+  }
+
+  .large-gallery-photo {
+    display: block;
+    height: 620px;
+  }
+
+  .rsvp-card {
+    min-height: 720px;
+    padding: 85px 24px 45px;
+    overflow: hidden;
+    isolation: isolate;
+    background-color: var(--cream);
+    background-image: url("assets/images/reference/batik-cream-tile.svg?v=3");
+    background-size: 36px 36px;
+  }
+
+  .rsvp-card::before,
+  .rsvp-card::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    right: -72px;
+    left: -72px;
+    height: 165px;
+    opacity: 0.58;
+    background: url("assets/images/reference/footer-bottom-transparent.png") center / auto 165px no-repeat;
+    pointer-events: none;
+  }
+
+  .rsvp-card::before {
+    top: -26px;
+    transform: rotate(180deg);
+  }
+
+  .rsvp-card::after {
+    bottom: -22px;
+  }
+
+  .rsvp-card h2 {
+    margin-bottom: 44px;
+    font-size: 66px;
+  }
+
+  .rsvp-card p,
+  .rsvp-card label {
+    font-size: 16px;
+  }
+
+  .guest-name input {
+    width: 82%;
+  }
+
+  .pill-options {
+    gap: 8px;
+    margin: 14px 0 25px;
+  }
+
+  .pill-options span,
+  .event-options span {
+    min-width: 82px;
+    min-height: 50px;
+    padding: 7px 13px;
+  }
+
+  .attendance-two-lines {
+    flex-direction: column;
+  }
+
+  .attendance-two-lines em {
+    display: block;
+    font-style: normal;
+    line-height: 1.05;
+  }
+
+  .event-options span {
+    min-width: 92px;
+  }
+
+  .guest-counts {
+    margin: 15px 0 23px;
+  }
+
+  .guest-counts select {
+    min-width: 58px;
+  }
+
+  .round-submit {
+    width: 75px;
+    height: 48px;
+  }
+
+  .wishes {
+    padding: 120px 22px 105px;
+  }
+
+  .wishes::before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: none;
+    height: 34px;
+    aspect-ratio: auto;
+    opacity: 1;
+    background: url("assets/images/reference/mobile-section-divider.png") center / auto 34px repeat-x;
+    transform: none;
+  }
+
+  .mobile-wishes-floral {
+    top: -74px;
+    width: 168px;
+    height: 288px;
+    opacity: 0.56;
+    background-image: url("assets/images/reference/mobile-wishes-floral.png");
+  }
+
+  .mobile-wishes-floral.ornament-left {
+    left: -58px;
+    transform: scaleX(-1);
+  }
+
+  .mobile-wishes-floral.ornament-right {
+    right: -58px;
+  }
+
+  .wishes-corner-bottom {
+    width: 180px;
+    height: 214px;
+    opacity: 0.72;
+  }
+
+  .wishes-corner-bottom.ornament-left {
+    left: -30px;
+  }
+
+  .wishes-corner-bottom.ornament-right {
+    right: -30px;
+  }
+
+  .wishes-content {
+    width: 84%;
+    max-width: 380px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .wishes h2 {
+    margin-bottom: 55px;
+    font-size: 63px;
+  }
+
+  .wishes form {
+    gap: 5px;
+  }
+
+  .wishes input {
+    height: 48px;
+    padding: 0 14px;
+    font-size: 15px;
+  }
+
+  .wishes textarea {
+    height: 140px;
+    padding: 12px 14px;
+    font-size: 15px;
+  }
+
+  .upload-label {
+    margin: 25px 0 14px;
+    font-size: 16px;
+  }
+
+  .file-field,
+  .send-wish,
+  .all-messages {
+    height: 50px;
+  }
+
+  .file-field span,
+  .send-wish,
+  .all-messages {
+    font-size: 14px;
+  }
+
+  .file-field span,
+  .send-wish {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .send-wish {
+    gap: 6px;
+  }
+
+  .send-wish {
+    margin-top: 22px;
+  }
+
+  .wish-list {
+    margin-top: 42px;
+    font-size: 16px;
+  }
+
+  .all-messages {
+    margin-top: 24px;
+  }
+
+  .thank-you {
+    min-height: 610px;
+    padding: 120px 27px 65px;
+    background-color: var(--cream);
+    background-image: url("assets/images/reference/batik-cream-tile.svg?v=3");
+    background-size: 36px 36px;
+  }
+
+  .thank-you::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 145px;
+    opacity: 0.86;
+    background: url("assets/images/reference/footer-bottom-transparent.png") center bottom / auto 145px no-repeat;
+    pointer-events: none;
+  }
+
+  .thank-you > div {
+    margin: 0;
+  }
+
+  .thank-you h2 {
+    font-size: 67px;
+  }
+
+  .thank-you p {
+    margin-top: 46px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .connected-logo {
+    visibility: visible;
+    width: 105px;
+    height: auto;
+    margin: 75px auto 0;
+  }
+
+  .footer-flourish {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    width: 190px;
+    height: 230px;
+    display: block;
+    opacity: 0.7;
+    background-image: url("assets/images/reference/footer-flourish-transparent.png");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: contain;
+    pointer-events: none;
+  }
+
+  .footer-flourish-left {
+    left: -56px;
+    transform: scaleX(-1);
+  }
+
+  .footer-flourish-right {
+    right: -56px;
+  }
+
+  .footer-sprig {
+    position: absolute;
+    z-index: 1;
+    bottom: 116px;
+    width: 68px;
+    height: 98px;
+    display: block;
+    opacity: 0.58;
+    background: url("assets/images/reference/footer-sprig-transparent.png") center / contain no-repeat;
+    pointer-events: none;
+  }
+
+  .footer-sprig-left {
+    left: -7px;
+    transform: scaleX(-1) rotate(-4deg);
+  }
+
+  .music-toggle {
+    right: 14px;
+    bottom: 14px;
+    padding: 11px 14px;
+  }
+
+  .music-label {
+    display: none;
+  }
+
+  .modal-body {
+    min-height: 0;
+    height: 68vh;
+  }
+}
+
+@media (min-width: 430px) and (max-width: 767.98px) {
+  .couple {
+    padding: 105px 20px 82px;
+  }
+
+  .islamic-intro {
+    margin-bottom: 52px;
+  }
+
+  .couple-grid {
+    grid-template-columns: minmax(0, 1fr) 42px minmax(0, 1fr);
+    align-items: start;
+    gap: 4px;
+  }
+
+  .portrait {
+    width: 120px;
+    height: 120px;
+  }
+
+  .person h2 {
+    margin: 20px 0 13px;
+    font-size: 38px;
+    line-height: 0.94;
+  }
+
+  .person h2 span {
+    display: inline;
+    margin: 0 0 0 0.14em;
+    font-size: 15px;
+    line-height: 1;
+  }
+
+  .person p {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  .ampersand {
+    padding-top: 68px;
+    font-size: 52px;
+  }
+
+  .couple-closing {
+    margin-top: 54px;
+  }
+}
+
+@media (min-width: 768px) {
+  .rsvp-card .attendance-options,
+  .rsvp-card .event-options {
+    display: grid;
+    justify-content: center;
+    gap: min(18px, 1.25vw);
+    transform: translateX(min(3px, 0.208vw));
+  }
+
+  .rsvp-card .attendance-options {
+    grid-template-columns: repeat(2, min(164px, 11.389vw));
+  }
+
+  .rsvp-card .event-options {
+    grid-template-columns: repeat(3, min(164px, 11.389vw));
+  }
+
+  .rsvp-card .pill-options label,
+  .rsvp-card .pill-options span {
+    width: min(164px, 11.389vw);
+    min-width: min(164px, 11.389vw);
+  }
+
+  .rsvp-card .pill-options span {
+    font-size: min(24px, 1.667vw);
+  }
+
+  .rsvp-card .attendance-options label:first-child > span {
+    position: relative;
+    top: min(10px, 0.694vw);
+  }
+
+  .rsvp-card .attendance-two-lines {
+    position: relative;
+  }
+
+  .rsvp-card .attendance-two-lines em {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    font-style: normal;
+    line-height: 1;
+    text-align: center;
+  }
+
+  .rsvp-card .attendance-two-lines em:first-child {
+    top: min(17px, 1.181vw);
+    transform: none;
+  }
+
+  .rsvp-card .attendance-two-lines em:last-child {
+    top: min(47px, 3.264vw);
+    transform: none;
+  }
+
+  .rsvp-card .guest-name {
+    top: 21.29%;
+    height: min(37px, 2.569vw);
+  }
+
+  .rsvp-card .guest-name input {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: min(37px, 2.569vw);
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-bottom-color: transparent;
+    background: transparent;
+    box-shadow: none;
+    color: #432416;
+    caret-color: #432416;
+    font-size: min(28px, 1.944vw);
+    line-height: min(37px, 2.569vw);
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .rsvp-card > p:nth-of-type(1) {
+    top: 25.53%;
+    transform: scaleX(1.024);
+    transform-origin: center;
+  }
+
+  .rsvp-card > p:nth-of-type(2) {
+    top: 44.09%;
+    transform: scaleX(1.025);
+    transform-origin: center;
+  }
+
+  .rsvp-card > p:nth-of-type(3) {
+    top: 60.09%;
+    transform: translateX(min(3px, 0.208vw)) scaleX(1.023);
+    transform-origin: center;
+  }
+
+  .rsvp-card .pill-options span,
+  .rsvp-card .pill-options input:checked + span,
+  .rsvp-card .guest-counts select,
+  .rsvp-card .round-submit {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .rsvp-card .guest-counts select {
+    border: 0;
+    outline: 0;
+    width: min(70px, 4.861vw);
+    height: min(50px, 3.472vw);
+    position: relative;
+    top: min(5px, 0.347vw);
+    padding: 0 0 0 min(12px, 0.833vw);
+    appearance: none;
+    -webkit-appearance: none;
+    color: #333333;
+    text-align: left;
+  }
+
+  .rsvp-card .guest-counts label:last-child select {
+    right: min(10px, 0.694vw);
+  }
+
+  .wishes-content {
+    position: relative;
+    width: min(730px, 50.694vw);
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .wishes h2 {
+    position: absolute;
+    top: min(323px, 22.431vw);
+    left: 0;
+    width: 100%;
+    margin: 0;
+    transform: none;
+  }
+
+  .wishes form {
+    position: absolute;
+    inset: 0;
+    display: block;
+  }
+
+  .wishes form > input,
+  .wishes form > textarea,
+  .wishes .upload-label,
+  .wishes .file-field,
+  .wishes .send-wish,
+  .wishes .wish-list,
+  .wishes .all-messages {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    margin: 0;
+  }
+
+  .wishes form > input {
+    top: min(456px, 31.667vw);
+    height: min(59px, 4.097vw);
+    padding: 0 min(38px, 2.639vw);
+    letter-spacing: 0.02em;
+  }
+
+  .wishes form > textarea {
+    top: min(529px, 36.736vw);
+    height: min(154px, 10.694vw);
+    padding: min(15px, 1.042vw) min(36px, 2.5vw);
+    letter-spacing: 0.02em;
+    resize: none;
+  }
+
+  .wishes form > input,
+  .wishes form > textarea,
+  .wishes .file-field,
+  .wishes .send-wish,
+  .wishes .all-messages {
+    border-color: transparent;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .wishes .upload-label {
+    top: min(705px, 48.958vw);
+    color: #432416;
+    transform: scaleX(1.022);
+    transform-origin: center;
+  }
+
+  .wishes .file-field {
+    top: min(773px, 53.681vw);
+    height: min(58px, 4.028vw);
+  }
+
+  .wishes .file-field span {
+    width: 100%;
+    align-self: stretch;
+    padding-left: min(65px, 4.514vw);
+    transform: scaleX(1.102);
+    transform-origin: left center;
+  }
+
+  .wishes .send-wish {
+    top: min(886px, 61.528vw);
+    height: min(59px, 4.097vw);
+    text-indent: min(38px, 2.639vw);
+  }
+
+  .wishes .wish-list {
+    top: min(1000px, 69.444vw);
+    left: min(1px, 0.069vw);
+    color: #432416;
+  }
+
+  .wishes .wish-list p {
+    margin: 0;
+    transform: scaleX(1.026);
+    transform-origin: left center;
+  }
+
+  .wishes .all-messages {
+    top: min(1112px, 77.222vw);
+    height: min(60px, 4.167vw);
+    padding: 0;
+    color: #432416;
+    font-size: min(24px, 1.667vw);
+    letter-spacing: 0.017em;
+    text-indent: min(65px, 4.514vw);
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
